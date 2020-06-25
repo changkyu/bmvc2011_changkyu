@@ -9,7 +9,8 @@ We propose a dynamic resource allocation algorithm based on Ranking Support Vect
 
 # Results
 
-![results](./doc/img/bmvc2011_results.png)
+![qualitative_results](./doc/img/bmvc2011_results.png)
+![quantitative_results2](./doc/img/bmvc2011_results2.png)
 
 # Author
 [Changkyu Song](https://sites.google.com/site/changkyusong86) (changkyusong86@gmail.com)
