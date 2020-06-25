@@ -3,7 +3,13 @@ Changkyu Song, Jeany Son, Suha Kwak, and Bohyung Han, Dynamic Resource Allocatio
 
 We propose a dynamic resource allocation algorithm based on Ranking Support Vector Machine (R-SVM) [1] for particle filter tracking. We adjust the number of observations in each frame adaptively and automatically, where tracker performs measurement for a subset of highly ranked particles in likelihood to preserve mode locations in the posterior and allocates the rest of particles to maintain the diversity of the posterior without actual measurements.
 
-![pipeline](https://lh4.googleusercontent.com/FvhWsg4YKrcW6AFueGxutjdUlRG4LHKiRhT1ELr_Z4uOR76KmHWEDlAayGXvcvlpybdeDsekjr4uSQnzBUnFPYQ_cf7w5REDkJ8sqBsQeYCftaoQbuQ=w1280)
+# Overview
+
+![pipeline](./doc/img/bmvc2011_overview.png)
+
+# Results
+
+![results](./doc/img/bmvc2011_results.png)
 
 # Author
 [Changkyu Song](https://sites.google.com/site/changkyusong86) (changkyusong86@gmail.com)
