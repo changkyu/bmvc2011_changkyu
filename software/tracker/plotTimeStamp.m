@@ -1,0 +1,38 @@
+clc;
+clear;
+
+file_result_data = 'result_data.mat';
+path_result_data = { '.\result\Campus\'; '.\result\L1Examples\car4\'; '.\result\Shop\' };
+
+n_result_data = size( path_result_data, 1 );
+
+cell_loaded = cell( n_result_data, 1 );
+
+for i=1:n_result_data
+    cell_loaded{i} = load( strcat(path_result_data{i},file_result_data) );
+    cell_loaded{i}.n_data = size( cell_loaded{i}.result_data, 1 );
+    
+    cell_loaded{i}.elapse_time = zeros( cell_loaded{i}.n_data, 1 );
+    for j=1:cell_loaded{i}.n_data
+        if (j>1)
+            cell_loaded{i}.result_data{j}.elapse_time = ...
+                cell_loaded{i}.result_data{j}.toc - cell_loaded{i}.result_data{j-1}.toc;
+        else
+            cell_loaded{i}.result_data{j}.elapse_time = ...
+                cell_loaded{i}.result_data{j}.toc;
+        end
+        cell_loaded{i}.elapse_time(j) = cell_loaded{i}.result_data{j}.elapse_time;
+    end
+    
+end
+
+%% draw
+figure;
+hold on;
+
+lineopt_result_data = { 'r-'; 'b--'; 'k:' };
+
+for i=1:n_result_data
+    plot( cell_loaded{i}.elapse_time(2:end), lineopt_result_data{i} );    
+end
+drawnow;
